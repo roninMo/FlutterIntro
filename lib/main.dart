@@ -4,51 +4,93 @@ void main() => runApp(MaterialApp(
   home: Home()
 ));
 
+
 class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[900],
       appBar: AppBar(
-        title: Text('intro app'),
+        title: Text('Identification Card'),
         centerTitle: true,
-        backgroundColor: Colors.red[600],
+        backgroundColor: Colors.grey[850],
+        elevation: 0.0
       ),
-      body: Row(
-        children: <Widget>[
-          Expanded(
-              flex: 3,
-              child: Image.asset('assets/images/space-2.jpg')
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.cyan,
-              child: Text('1'),
+      body: Padding(
+        padding: EdgeInsets.fromLTRB(30.0, 40.0, 30.0, 0.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Center(
+              child: CircleAvatar(
+                backgroundImage: AssetImage('assets/images/Studio_Ghibli.jpg'),
+                radius: 40.0,
+              ),
             ),
-          ),
-          Expanded(
-            flex: 1,
-            child: Container(
-              padding: EdgeInsets.all(30.0),
-              color: Colors.pinkAccent,
-              child: Text('2'),
+            Divider(height: 60.0, color: Colors.grey[800]),
+            Text(
+              'Name',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 1
+              ),
             ),
-          ),
-          Expanded(
-              flex: 1,
-              child: Container(
-                padding: EdgeInsets.all(30.0),
-                color: Colors.amber,
-                child: Text('3'),
+            SizedBox(height: 10.0),
+            Text(
+              'Studio Ghibli',
+              style: TextStyle(
+                color: Colors.amberAccent[200],
+                letterSpacing: 1,
+                fontSize: 22.0,
+                fontWeight: FontWeight.bold
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'Genre',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 1,
+              ),
+            ),
+            SizedBox(height: 10.0),
+            Text(
+              '4',
+              style: TextStyle (
+              color: Colors.amberAccent[200],
+                  letterSpacing: 1,
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold
+              ),
+            ),
+            SizedBox(height: 30.0),
+            Text(
+              'Email',
+              style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 1,
               )
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () { print('Button pressed!'); },
-        child: Text('click'),
-        backgroundColor: Colors.red[600],
+            ),
+            SizedBox(height: 10.0),
+            Row(
+              children: <Widget>[
+                Text(
+                  'schwegmank@gmail.com',
+                  style: TextStyle(
+                    color: Colors.grey[400],
+                    fontSize: 16.0,
+                    letterSpacing: 1,
+                  ),
+                ),
+                SizedBox(width: 10.0),
+                Icon(
+                  Icons.email,
+                  color: Colors.grey[400],
+                ),
+              ],
+            ),
+          ],
+        )
       ),
     );
   }
